@@ -1,34 +1,76 @@
-# Maven build
+# ========================
+# Maven / Spring Boot
+# ========================
 target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven release files
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
-# Logs
-*.log
-
-# IDE files
-.idea/
-*.iml
-.project
-.classpath
-.settings/
-
-# OS files
-.DS_Store
-Thumbs.db
-
 # Maven wrapper
 .mvn/
 mvnw
 mvnw.cmd
 
-# Backup files
+# ========================
+# Logs and backups
+# ========================
+*.log
 *.swp
 *.bak
+*.tmp
 
-# Ignore Zipkin JARs
+# ========================
+# IDE files
+# ========================
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# ========================
+# OS-specific files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Node.js / React frontend
+# ========================
+react-frontend/node_modules/
+react-frontend/build/
+react-frontend/dist/
+react-frontend/.env
+react-frontend/.env.local
+react-frontend/.env.development.local
+react-frontend/.env.test.local
+react-frontend/.env.production.local
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================
+# Zipkin JARs
+# ========================
 organization-service/*.jar
 api-gateway/*.jar
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
