@@ -13,6 +13,8 @@ import com.harikrish.employeeservice.dto.APIResponseDto;
 import com.harikrish.employeeservice.dto.EmployeeDto;
 import com.harikrish.employeeservice.service.EmployeeService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -22,6 +24,14 @@ public class EmployeeController {
 
 	private EmployeeService employeeService;
 
+	@Operation( 
+			summary = "Save Employee Rest API",
+			description =  "Save Employee Rest API is used to save Employee Object in a database"
+			)
+	@ApiResponse(
+			responseCode = "201",
+			description = "HTTP Status 201 CREATED"
+			)
 	@PostMapping
 	public ResponseEntity<EmployeeDto> saveEmployee(@RequestBody EmployeeDto employeeDto) {
 
@@ -31,6 +41,14 @@ public class EmployeeController {
 
 	}
 
+	@Operation( 
+			summary = "Get Employee Rest API",
+			description =  "Get Employee Rest API is used to retrieve a Employee details from a database"
+			)
+	@ApiResponse(
+			responseCode = "200",
+			description = "HTTP Status 200 SUCCESS"
+			)
 	@GetMapping("{id}")
 	public ResponseEntity<APIResponseDto> getEmployee(@PathVariable("id") Long employeeId) {
 
